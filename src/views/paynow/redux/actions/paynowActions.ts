@@ -22,6 +22,7 @@ export function paymentSuccessAction(transactionId: string): PaymentSuccessActio
 }
 
 export function paymentFailureAction(error: string): PaymentFailureAction {
+  // eslint-disable-next-line no-console
   console.error('fetchSkillsFailureAction', error);
   return {
     type: paynowActionTypes.PAYMENT_FAILURE,
