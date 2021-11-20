@@ -41,7 +41,9 @@ export default function paynowReducer(
     case paynowActionTypes.RESET_PAYMENT:
       return {
         ...state,
+        paymentLoading: false,
         transactionId: undefined,
+        itemListHasError: { hasError: false, description: "" },
       };
     default:
       return state;

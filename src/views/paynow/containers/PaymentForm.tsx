@@ -42,7 +42,7 @@ export default function PaymentForm(): JSX.Element {
       .required("CVN required")
       .matches(/^\d+$/, "Invalid CVN")
       .min(3, "Invalid CVN")
-      .max(4, "Invalid CVN"),
+      .max(3, "Invalid CVN"),
   });
 
   return (
@@ -76,11 +76,11 @@ export default function PaymentForm(): JSX.Element {
             })
           );
           resetForm();
+          history.push("/payResult");
         }}
       >
         {({ values, errors, touched, handleSubmit, resetForm }) => {
           const cardType = checkCardType(values.cardNumber);
-          console.log(cardType);
           return (
             <form onSubmit={handleSubmit}>
               <div className="w-100 mb-4" style={{ maxWidth: 300 }}>

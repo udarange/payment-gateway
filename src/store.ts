@@ -1,12 +1,18 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
-import paynowReducer from "./views/paynow/redux/reduce/paynowReducer";
+import paynowReducer, {
+  PayNowState,
+} from "./views/paynow/redux/reduce/paynowReducer";
 import createSagaMiddleware from "redux-saga";
 import { spawn } from "redux-saga/effects";
 import itemSaga from "./views/paynow/redux/sagas";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-const rootReducer = combineReducers({
-  itemReducer: paynowReducer,
+export interface AppState {
+  payNowState: PayNowState;
+}
+
+const rootReducer = combineReducers<AppState>({
+  payNowState: paynowReducer,
 });
 
 function* rootSaga() {

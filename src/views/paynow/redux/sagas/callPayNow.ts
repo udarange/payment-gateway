@@ -16,12 +16,11 @@ function doPayment(payment: PaymentRequest) {
 }
 
 export default function* callPayNow(action: TriggerPaymentAction) {
-  console.log("++++++++++++++++++++++");
   try {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const response: string = yield call(doPayment, action.payment);
     //TODO: extract transaction id and put
-    yield put(paymentSuccessAction(""));
+    yield put(paymentSuccessAction("23984092nuin8"));
   } catch (err) {
     // @ts-ignore
     yield put(paymentFailureAction(err.toString()));
