@@ -4,10 +4,10 @@ import {
   paymentSuccessAction,
 } from "../actions/paynowActions";
 import axios from "axios";
-import { Payment, TriggerPaymentAction } from "../actions/actionTypes";
+import { PaymentRequest, TriggerPaymentAction } from "../actions/actionTypes";
 
-function doPayment(payment: Payment) {
-  const data = { payment }; //TODO:
+function doPayment(payment: PaymentRequest) {
+  const data = { ...payment };
 
   return axios
     .post(process.env.REACT_APP_PAYMENT_GATEWAY_API ?? "", data, {})
@@ -16,6 +16,7 @@ function doPayment(payment: Payment) {
 }
 
 export default function* callPayNow(action: TriggerPaymentAction) {
+  console.log("++++++++++++++++++++++");
   try {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const response: string = yield call(doPayment, action.payment);

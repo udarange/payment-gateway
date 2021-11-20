@@ -1,16 +1,13 @@
-export enum CardTypes {
-  visa,
-  master,
-  amex,
+export interface PaymentFormData {
+  cardNumber: number;
+  securityCode: number;
+  cardHolderName: string;
+  expiryMonth: number;
+  expiryYear: number;
 }
 
-export interface Payment {
-  cardType: CardTypes;
-  cardNumber: string;
-  securityCode: string;
-  cardHolderName: string;
-  ExpiryMonth: number;
-  ExpiryYear: number;
+export interface PaymentRequest extends PaymentFormData {
+  cardType: string;
   amount: number;
   currency: string;
   merchantId: string;
@@ -25,7 +22,7 @@ export enum paynowActionTypes {
 
 export interface TriggerPaymentAction {
   type: paynowActionTypes.TRIGGER_PAYMENT;
-  payment: Payment;
+  payment: PaymentRequest;
 }
 
 export interface PaymentSuccessAction {

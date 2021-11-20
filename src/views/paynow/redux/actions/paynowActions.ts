@@ -1,5 +1,5 @@
 import {
-  Payment,
+  PaymentRequest,
   PaymentFailureAction,
   PaymentSuccessAction,
   paynowActionTypes,
@@ -7,7 +7,9 @@ import {
   TriggerPaymentAction,
 } from "./actionTypes";
 
-export function triggerPaymentAction(payment: Payment): TriggerPaymentAction {
+export function triggerPaymentAction(
+  payment: PaymentRequest
+): TriggerPaymentAction {
   return {
     type: paynowActionTypes.TRIGGER_PAYMENT,
     payment,
