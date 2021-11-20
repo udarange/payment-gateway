@@ -1,10 +1,7 @@
-import { Field, FormikErrors, FormikTouched } from "formik";
-import React from "react";
+import { Field, FormikErrors, FormikTouched } from 'formik';
+import React from 'react';
 
-export default function CardHolderName(props: {
-  errors: FormikErrors<any>;
-  touched: FormikTouched<any>;
-}) {
+export default function CardHolderName(props: { errors: FormikErrors<any>; touched: FormikTouched<any> }) {
   const { errors, touched } = props;
 
   return (
@@ -12,11 +9,7 @@ export default function CardHolderName(props: {
       <label htmlFor="cardHolderName">Card Holder Name</label>
       <Field
         name="cardHolderName"
-        className={
-          touched.cardHolderName && errors.cardHolderName
-            ? "form-control is-invalid"
-            : "form-control"
-        }
+        className={touched.cardHolderName && errors.cardHolderName ? 'form-control is-invalid' : 'form-control'}
         type="text"
         maxlength={50}
       />

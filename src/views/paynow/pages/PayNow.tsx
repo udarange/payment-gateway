@@ -1,6 +1,6 @@
-import React from "react";
-import YourOrder from "../containers/YourOrder";
-import PaymentForm from "../containers/PaymentForm";
+import React from 'react';
+import YourOrder from '../containers/YourOrder';
+import PaymentForm from '../containers/PaymentForm';
 
 export default function PayNow(): JSX.Element {
   return (

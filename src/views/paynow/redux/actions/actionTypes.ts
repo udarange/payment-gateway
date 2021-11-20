@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export interface PaymentFormData {
   cardNumber: number;
   securityCode: number;
@@ -14,10 +15,10 @@ export interface PaymentRequest extends PaymentFormData {
 }
 
 export enum paynowActionTypes {
-  TRIGGER_PAYMENT = "payment-gateway/paynow/trigger-payment",
-  PAYMENT_SUCCESS = "payment-gateway/paynow/payment-success",
-  PAYMENT_FAILURE = "payment-gateway/paynow/payment-failure",
-  RESET_PAYMENT = "payment-gateway/paynow/reset-payment",
+  TRIGGER_PAYMENT = 'payment-gateway/paynow/trigger-payment',
+  PAYMENT_SUCCESS = 'payment-gateway/paynow/payment-success',
+  PAYMENT_FAILURE = 'payment-gateway/paynow/payment-failure',
+  RESET_PAYMENT = 'payment-gateway/paynow/reset-payment',
 }
 
 export interface TriggerPaymentAction {
@@ -39,8 +40,4 @@ export interface ResetPaymentAction {
   type: paynowActionTypes.RESET_PAYMENT;
 }
 
-export type PaynowActionTypes =
-  | TriggerPaymentAction
-  | PaymentSuccessAction
-  | PaymentFailureAction
-  | ResetPaymentAction;
+export type PaynowActionTypes = TriggerPaymentAction | PaymentSuccessAction | PaymentFailureAction | ResetPaymentAction;

@@ -1,5 +1,5 @@
-import { Field, FormikErrors, FormikTouched } from "formik";
-import React from "react";
+import { Field, FormikErrors, FormikTouched } from 'formik';
+import React from 'react';
 
 export default function ExpiryYear(props: {
   errors: FormikErrors<any>;
@@ -17,11 +17,7 @@ export default function ExpiryYear(props: {
         name="expiryYear"
         as="select"
         multiple={false}
-        className={
-          touched.expiryYear && errors.expiryYear
-            ? "form-control is-invalid"
-            : "form-control"
-        }
+        className={touched.expiryYear && errors.expiryYear ? 'form-control is-invalid' : 'form-control'}
       >
         <option value={0}>----</option>
         {yearList.map((el) => (
@@ -30,9 +26,7 @@ export default function ExpiryYear(props: {
           </option>
         ))}
       </Field>
-      {touched.expiryYear && errors.expiryYear && (
-        <div className="invalid-feedback">{errors.expiryYear}</div>
-      )}
+      {touched.expiryYear && errors.expiryYear && <div className="invalid-feedback">{errors.expiryYear}</div>}
     </div>
   );
 }

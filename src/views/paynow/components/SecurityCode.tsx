@@ -1,10 +1,7 @@
-import { Field, FormikErrors, FormikTouched } from "formik";
-import React from "react";
+import { Field, FormikErrors, FormikTouched } from 'formik';
+import React from 'react';
 
-export default function SecurityCode(props: {
-  errors: FormikErrors<any>;
-  touched: FormikTouched<any>;
-}) {
+export default function SecurityCode(props: { errors: FormikErrors<any>; touched: FormikTouched<any> }) {
   const { errors, touched } = props;
 
   return (
@@ -12,17 +9,11 @@ export default function SecurityCode(props: {
       <label htmlFor="securityCode">Security Code</label>
       <Field
         name="securityCode"
-        className={
-          touched.securityCode && errors.securityCode
-            ? "form-control is-invalid"
-            : "form-control"
-        }
+        className={touched.securityCode && errors.securityCode ? 'form-control is-invalid' : 'form-control'}
         type="text"
         maxlength={3}
       />
-      {touched.securityCode && errors.securityCode && (
-        <div className="invalid-feedback">{errors.securityCode}</div>
-      )}
+      {touched.securityCode && errors.securityCode && <div className="invalid-feedback">{errors.securityCode}</div>}
     </div>
   );
 }

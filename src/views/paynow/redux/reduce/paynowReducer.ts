@@ -1,4 +1,4 @@
-import { paynowActionTypes, PaynowActionTypes } from "../actions/actionTypes";
+import { paynowActionTypes, PaynowActionTypes } from '../actions/actionTypes';
 
 export interface PayNowState {
   paymentLoading: boolean;
@@ -9,27 +9,24 @@ export interface PayNowState {
 const initialState: PayNowState = {
   paymentLoading: false,
   transactionId: undefined,
-  paymentError: { hasError: false, description: "" },
+  paymentError: { hasError: false, description: '' },
 };
 
-export default function paynowReducer(
-  state: PayNowState = initialState,
-  action: PaynowActionTypes
-) {
+export default function paynowReducer(state: PayNowState = initialState, action: PaynowActionTypes) {
   switch (action.type) {
     case paynowActionTypes.TRIGGER_PAYMENT:
       return {
         ...state,
         paymentLoading: true,
         transactionId: undefined,
-        itemListHasError: { hasError: false, description: "" },
+        itemListHasError: { hasError: false, description: '' },
       };
     case paynowActionTypes.PAYMENT_SUCCESS:
       return {
         ...state,
         paymentLoading: false,
         transactionId: action.transactionId,
-        itemListHasError: { hasError: false, description: "" },
+        itemListHasError: { hasError: false, description: '' },
       };
     case paynowActionTypes.PAYMENT_FAILURE:
       return {
@@ -43,7 +40,7 @@ export default function paynowReducer(
         ...state,
         paymentLoading: false,
         transactionId: undefined,
-        itemListHasError: { hasError: false, description: "" },
+        itemListHasError: { hasError: false, description: '' },
       };
     default:
       return state;

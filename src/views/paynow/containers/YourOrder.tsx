@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 export default function YourOrder(): JSX.Element {
   return (
     <div
       className="p-3"
       style={{
-        backgroundColor: "#f8f9fa",
-        borderRadius: "10px",
-        border: "1px solid #e9ecef",
+        backgroundColor: '#f8f9fa',
+        borderRadius: '10px',
+        border: '1px solid #e9ecef',
       }}
     >
       <h2>Your Order</h2>

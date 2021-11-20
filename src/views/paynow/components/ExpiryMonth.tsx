@@ -1,10 +1,7 @@
-import { Field, FormikErrors, FormikTouched } from "formik";
-import React from "react";
+import { Field, FormikErrors, FormikTouched } from 'formik';
+import React from 'react';
 
-export default function ExpiryMonth(props: {
-  errors: FormikErrors<any>;
-  touched: FormikTouched<any>;
-}) {
+export default function ExpiryMonth(props: { errors: FormikErrors<any>; touched: FormikTouched<any> }) {
   const { errors, touched } = props;
 
   return (
@@ -16,11 +13,7 @@ export default function ExpiryMonth(props: {
         name="expiryMonth"
         as="select"
         multiple={false}
-        className={
-          touched.expiryMonth && errors.expiryMonth
-            ? "form-control is-invalid"
-            : "form-control"
-        }
+        className={touched.expiryMonth && errors.expiryMonth ? 'form-control is-invalid' : 'form-control'}
       >
         <option value={0}>--</option>
         <option value={1}>01</option>
@@ -36,9 +29,7 @@ export default function ExpiryMonth(props: {
         <option value={11}>11</option>
         <option value={12}>12</option>
       </Field>
-      {touched.expiryMonth && errors.expiryMonth && (
-        <div className="invalid-feedback">{errors.expiryMonth}</div>
-      )}
+      {touched.expiryMonth && errors.expiryMonth && <div className="invalid-feedback">{errors.expiryMonth}</div>}
     </div>
   );
 }
