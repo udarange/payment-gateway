@@ -11,7 +11,7 @@ export default function SecurityCode(props: { errors: FormikErrors<any>; touched
         name="securityCode"
         className={touched.securityCode && errors.securityCode ? 'form-control is-invalid' : 'form-control'}
         type="text"
-        maxlength={3}
+        maxLength={3}
       />
       {touched.securityCode && errors.securityCode && <div className="invalid-feedback">{errors.securityCode}</div>}
     </div>

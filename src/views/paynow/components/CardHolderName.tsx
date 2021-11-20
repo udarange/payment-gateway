@@ -11,7 +11,7 @@ export default function CardHolderName(props: { errors: FormikErrors<any>; touch
         name="cardHolderName"
         className={touched.cardHolderName && errors.cardHolderName ? 'form-control is-invalid' : 'form-control'}
         type="text"
-        maxlength={50}
+        maxLength={50}
       />
       {touched.cardHolderName && errors.cardHolderName && (
         <div className="invalid-feedback">{errors.cardHolderName}</div>
