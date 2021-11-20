@@ -18,6 +18,7 @@ export default function SecurityCode(props: {
             : "form-control"
         }
         type="text"
+        maxlength={3}
       />
       {touched.securityCode && errors.securityCode && (
         <div className="invalid-feedback">{errors.securityCode}</div>

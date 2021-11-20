@@ -18,6 +18,7 @@ export default function CardNumber(props: {
             : "form-control"
         }
         type="text"
+        maxlength={16}
       />
       {touched.cardNumber && errors.cardNumber && (
         <div className="invalid-feedback">{errors.cardNumber}</div>

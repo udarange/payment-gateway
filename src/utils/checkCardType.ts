@@ -1,6 +1,6 @@
 export default function checkCardType(cardNumber: string): string {
   if (cardNumber.startsWith("4")) {
-    if (cardNumber.length === 13 || cardNumber.length === 16) {
+    if (cardNumber.length === 16) {
       return "visa";
     }
   }

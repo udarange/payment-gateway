@@ -1,4 +1,5 @@
 import { Field, FormikErrors, FormikTouched } from "formik";
+import React from "react";
 
 export default function CardHolderName(props: {
   errors: FormikErrors<any>;
@@ -17,6 +18,7 @@ export default function CardHolderName(props: {
             : "form-control"
         }
         type="text"
+        maxlength={50}
       />
       {touched.cardHolderName && errors.cardHolderName && (
         <div className="invalid-feedback">{errors.cardHolderName}</div>

@@ -33,7 +33,7 @@ export default function PaymentForm(): JSX.Element {
       .min(3, "Please enter valid name"),
     cardNumber: Yup.string()
       .required("Card number required")
-      .matches(/^\d+$/, "Invalid Number")
+      .matches(/^(4[0-9]{15}|5[0-9]{15}|3[47][0-9]{13})$/, "Invalid Number")
       .min(13, "Invalid Number")
       .max(16, "Invalid Number"),
     expiryMonth: Yup.number().min(1, "Expiry month required"),
